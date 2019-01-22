@@ -2,18 +2,20 @@
 <html lang='en'>
 <head>
   <meta charset='UTF-8'>
-  <title>Artists</title>
+  <title>Aanvraag inhaalexamen</title>
   <link rel='stylesheet' href='css/bootstrap.min.css'>
 </head>
 <body>
 <div class='well'>
-  <h2>Add an artist</h2>
+  <h2>Aanvraag indienen</h2>
   <br/><br/>
   <form action='/add' method='POST'>
    <table>
-     <tr><td>Name: </td><td><input type='text' name='name'></td></tr>
-     <tr><td>Age: </td><td><input type='number' name='age'></td></tr>
-     <tr><td><button type='submit'>Add</button></td></tr>
+     <tr><td>Naam: </td><td><input type='text' name='naam'></td></tr>
+     <tr><td>Examen: </td><td><input type='text' name='examen'></td></tr>
+     <tr><td>Reden: </td><td><input type='text' name='reden'></td></tr>
+     <tr><td>Datum vandaag: </td><td><input type='date' name='datum'></td></tr>
+     <tr><td><button type='submit'>Indienen</button></td></tr>
    </table>
   </form>
 </div>

@@ -2,21 +2,18 @@
 <html lang='en'>
 <head>
   <meta charset='UTF-8'>
-  <title>Artists</title>
+  <title>Inhaalexamen</title>
   <link rel='stylesheet' href='css/bootstrap.min.css'>
 </head>
 <body>
-  <h2>Result</h2>
+  <h2>Resultaat</h2>
   <br/><br/>
   <p class='artist'>
    <span><b>Name: </b><%= artist.name %></span><br/>
-   <span><b>Age: </b><%= artist.age %></span><br/>
+   <span><b>Examen: </b><%= artist.examen %></span><br/>
+   <span><b>Reden: </b><%= artist.reden %></span><br/>
+   <span><b>Datum: </b><%= artist.datum %></span><br/>
   </p>
-
-  <form action='/delete' method='POST'>
-    <span><input type='hidden' name='name' value='<%=artist.name%>'></span>
-    <span><button type='submit'>Delete</button></span>
-  </form>
 
 </body>
 </html>

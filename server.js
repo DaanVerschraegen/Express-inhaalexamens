@@ -7,7 +7,7 @@ var db;
 
 MongoClient.connect('mongodb://localhost:27017/examen', { useNewUrlParser: true }, (err, database) => {
   if (err) return console.log(err)
-  db = database.db('artists')
+  db = database.db('examen')
   app.listen(process.env.PORT || 3000, () => {
     console.log('Listening on port 3000')
   })
@@ -18,29 +18,20 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(express.static('public'))
 
-// Redirect to list
+// Redirect to add
 app.get('/', (req, res) => {
-   res.redirect('/list')
+   res.redirect('/add')
 })
 
-// List all products
-app.get('/list', (req, res) => {
-  db.collection('artists').find().toArray((err, result) => {
-    if (err) return console.log(err)
-    res.render('list.ejs', { artists: result })
-  })
-})
-
-// Show the add product form
+// Show the add "aanvraag" form
 app.get('/add', (req, res) => {
    res.render('add.ejs', {})
 })
 
-// Add a product to the db
+// Add "aanvraag" to the db
 app.post('/add', (req, res) => {
-  db.collection('artists').insertOne(req.body, (err, result) => {
+  db.collection('inhaal').insertOne(req.body, (err, result) => {
     if (err) return console.log(err)
-     res.redirect('/list')
   })
 })
 
