@@ -52,6 +52,6 @@ app.post('/search', (req, res) => {
    if (result == '')
        res.render('search_not_found.ejs', {})
    else
-       res.render('search_result.ejs', { artist: result[0] })
+       res.render('search_result.ejs', { inhaalexamen: result[0] })
  });
 })
